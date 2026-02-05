@@ -1,0 +1,84 @@
+/* RESET TOTAL PARA ESTE COMPONENTE */
+.nav-fixed-top, .nav-fixed-top * {
+  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.nav-fixed-top {
+  background-color: #0b0b0b !important;
+  width: 100% !important;
+  height: 90px !important;
+  display: flex !important;
+  align-items: center !important;
+  border-bottom: 2px solid #333 !important;
+}
+
+.nav-flex-wrapper {
+  display: flex !important;
+  flex-direction: row !important; /* ESTO FUERZA LA LÍNEA */
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding: 0 5% !important;
+}
+
+/* LOGO PROPIO */
+.nav-logo-text {
+  font-size: 3rem !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  display: flex !important;
+  letter-spacing: -2px !important;
+}
+
+.text-red-dest {
+  color: #ff0000 !important; /* Rojo puro */
+}
+
+/* BUSCADOR CON REBORDE REAL */
+.nav-search-capsule {
+  display: flex !important;
+  align-items: center !important;
+  background-color: #1a1a1a !important;
+  border: 2px solid #ffffff !important; 
+  border-radius: 50px !important;
+  padding: 10px 25px !important;
+  width: 450px !important;
+}
+
+.nav-search-input {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  color: #ffffff !important;
+  width: 100% !important;
+  margin-left: 10px !important;
+  font-size: 1.1rem !important;
+}
+
+/* --- CAMBIO: Placeholder en BLANCO --- */
+.nav-search-input::placeholder {
+  color: #ffffff !important;
+  opacity: 1 !important; /* Necesario para que no se vea grisáceo en Firefox */
+}
+
+/* Soporte para navegadores antiguos */
+.nav-search-input::-webkit-input-placeholder {
+  color: #ffffff !important;
+}
+
+/* FAVORITOS */
+.nav-fav-pill {
+  display: flex !important;
+  align-items: center !important;
+  background-color: #1a1a1a !important;
+  border: 2px solid #ffffff !important; 
+  padding: 12px 25px !important;
+  border-radius: 50px !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: bold !important;
+}

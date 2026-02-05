@@ -1,0 +1,43 @@
+/* src/components/GenreFilter/GenreFilter.css */
+.genre-filter-container {
+  background-color: #0b0d11;
+  width: 100%;
+  border-bottom: 1px solid #1f2229;
+}
+
+.custom-pills-row {
+  display: flex !important;
+  flex-wrap: nowrap !important; /* Fuerza una sola línea */
+  overflow-x: auto; /* Habilita scroll horizontal */
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+}
+
+/* Ocultar barra de scroll para estética limpia */
+.custom-pills-row::-webkit-scrollbar {
+  height: 0px;
+  display: none;
+}
+
+.custom-pill {
+  background-color: #1a1d23 !important;
+  color: #888 !important;
+  border: 1px solid #333 !important;
+  border-radius: 20px !important;
+  padding: 6px 18px !important;
+  margin: 0 4px;
+  font-size: 0.85rem;
+  white-space: nowrap; /* Evita que el texto de la categoría se rompa */
+  transition: all 0.2s ease;
+}
+
+.custom-pill:hover {
+  color: #fff !important;
+  border-color: #e50914 !important;
+}
+
+.custom-pill.active {
+  background-color: #e50914 !important;
+  color: #fff !important;
+  border-color: #e50914 !important;
+}
