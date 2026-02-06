@@ -1,22 +1,26 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import styles from './Navbar.module.css'; // Asegúrate de usar el archivo CSS que editamos
+import { Link } from 'react-router-dom';
+import styles from './Navbar.module.css';
 
 const Navbar = ({ onSearch }) => {
-  const navigate = useNavigate();
-
   return (
     <nav className={styles['nav-fixed-top']}>
       <div className={styles['nav-flex-wrapper']}>
         
-        {/* LOGO: movieDEST */}
+        {/* LOGO */}
         <Link to="/" className={styles['nav-logo-text']}>
           movie<span className={styles['text-red-dest']}>dest</span>
         </Link>
 
-        {/* BUSCADOR */}
+        {/* BOTÓN FAVORITOS (Lo subimos en el orden visual para móvil) */}
+        <Link to="/favorites" className={styles['nav-fav-pill']}>
+          <span>❤️</span>
+          <span>Favoritos</span>
+        </Link>
+
+        {/* BUSCADOR (Bajará a su propia línea en móvil gracias al order: 3) */}
         <div className={styles['nav-search-capsule']}>
-          <span style={{ fontSize: '1.2rem' }}>🔍</span>
+          <span>🔍</span>
           <input 
             type="text" 
             className={styles['nav-search-input']} 
@@ -24,12 +28,6 @@ const Navbar = ({ onSearch }) => {
             onChange={(e) => onSearch(e.target.value)}
           />
         </div>
-
-        {/* BOTÓN FAVORITOS */}
-        <Link to="/favorites" className={styles['nav-fav-pill']}>
-          <span style={{ marginRight: '8px' }}>❤️</span>
-          Favoritos
-        </Link>
 
       </div>
     </nav>

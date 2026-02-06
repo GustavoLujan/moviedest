@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { tmdb } from '../api/tmdbConfig';
-import MovieCard from '../components/MovieCard';
+import MovieCard from './components/MovieCard';
 import styles from './Favorites.module.css'; // Reutilizamos el grid de favorites
 
 const Search = () => {

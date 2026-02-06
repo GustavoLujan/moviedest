@@ -29,7 +29,7 @@
 }
 
 .posterSide img {
-  width: 350px; /* Tamaño del póster a la izquierda */
+  width: 350px; 
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(0,0,0,0.8);
 }
@@ -64,7 +64,7 @@
 }
 
 .btnTrailer {
-  background-color: #e50914; /* Rojo tráiler */
+  background-color: #e50914; 
   color: white;
   padding: 10px 25px;
   border-radius: 50px;
@@ -88,10 +88,10 @@
 }
 
 .btnFavActive {
-  border-color: #e50914; /* Borde rojo si es favorito */
+  border-color: #e50914; 
 }
 
-/* REPARTO CIRCULAR MARCO ROJO */
+
 .castSection {
   margin-top: 20px;
 }
@@ -111,10 +111,10 @@
 }
 
 .actorCircle {
-  width: 65px; /* Tamaño circular pequeño */
+  width: 65px; 
   height: 65px;
   border-radius: 50%;
-  border: 2px solid #e50914; /* EL MARCO ROJO */
+  border: 2px solid #e50914; 
   overflow: hidden;
   margin-bottom: 5px;
 }

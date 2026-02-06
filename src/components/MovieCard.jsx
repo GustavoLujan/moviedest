@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importante para la navegación
+import { Link } from 'react-router-dom'; 
 import './MovieCard.module.css';
 
 const MovieCard = ({ movie }) => {

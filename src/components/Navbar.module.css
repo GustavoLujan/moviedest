@@ -1,84 +1,128 @@
-/* RESET TOTAL PARA ESTE COMPONENTE */
-.nav-fixed-top, .nav-fixed-top * {
-  box-sizing: border-box !important;
+/* RESET  */
+.nav-fixed-top, 
+.nav-fixed-top * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
 
 .nav-fixed-top {
-  background-color: #0b0b0b !important;
-  width: 100% !important;
-  height: 90px !important;
-  display: flex !important;
-  align-items: center !important;
-  border-bottom: 2px solid #333 !important;
+  background-color: #0b0b0b;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #333;
+  position: sticky; 
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-flex-wrapper {
-  display: flex !important;
-  flex-direction: row !important; /* ESTO FUERZA LA LÍNEA */
-  justify-content: space-between !important;
-  align-items: center !important;
-  width: 100% !important;
-  padding: 0 5% !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 5%;
 }
 
-/* LOGO PROPIO */
+/* LOGO */
 .nav-logo-text {
-  font-size: 3rem !important;
-  font-weight: 900 !important;
-  color: #ffffff !important;
-  text-decoration: none !important;
-  display: flex !important;
-  letter-spacing: -2px !important;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  letter-spacing: -2px;
 }
 
 .text-red-dest {
-  color: #ff0000 !important; /* Rojo puro */
+  color: #ff0000;
 }
 
-/* BUSCADOR CON REBORDE REAL */
+/* BUSCADOR */
 .nav-search-capsule {
-  display: flex !important;
-  align-items: center !important;
-  background-color: #1a1a1a !important;
-  border: 2px solid #ffffff !important; 
-  border-radius: 50px !important;
-  padding: 10px 25px !important;
-  width: 450px !important;
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  padding: 10px 25px;
+  width: 450px;
 }
 
 .nav-search-input {
-  background: transparent !important;
-  border: none !important;
-  outline: none !important;
-  color: #ffffff !important;
-  width: 100% !important;
-  margin-left: 10px !important;
-  font-size: 1.1rem !important;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  width: 100%;
+  margin-left: 10px;
+  font-size: 1.1rem;
 }
 
-/* --- CAMBIO: Placeholder en BLANCO --- */
 .nav-search-input::placeholder {
-  color: #ffffff !important;
-  opacity: 1 !important; /* Necesario para que no se vea grisáceo en Firefox */
-}
-
-/* Soporte para navegadores antiguos */
-.nav-search-input::-webkit-input-placeholder {
-  color: #ffffff !important;
+  color: #ffffff;
+  opacity: 1;
 }
 
 /* FAVORITOS */
 .nav-fav-pill {
-  display: flex !important;
-  align-items: center !important;
-  background-color: #1a1a1a !important;
-  border: 2px solid #ffffff !important; 
-  padding: 12px 25px !important;
-  border-radius: 50px !important;
-  color: #ffffff !important;
-  text-decoration: none !important;
-  font-weight: bold !important;
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  border: 2px solid #ffffff;
+  padding: 12px 25px;
+  border-radius: 50px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.nav-fav-pill:hover {
+  background-color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-fixed-top {
+    height: auto;
+    padding: 15px 0;
+  }
+
+  .nav-flex-wrapper {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .nav-logo-text {
+    font-size: 2rem;
+    order: 1;
+  }
+
+  .nav-fav-pill {
+    order: 2;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .nav-search-capsule {
+    order: 3;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo-text {
+    font-size: 1.5rem;
+  }
+  
+  /* Ocultamos texto "Favoritos" en pantallas mini */
+  .nav-fav-pill span:last-child {
+    display: none;
+  }
 }

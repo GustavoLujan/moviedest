@@ -3,26 +3,21 @@ import axios from 'axios';
 const api = axios.create({
   baseURL: 'https://api.themoviedb.org/3',
   headers: {
-    // Tu Token de acceso v4
     Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0M2ZmNzczY2NlZWRjMDcyM2Y5MmY5MGM5MDE0NDM2NyIsIm5iZiI6MTc2OTcxNDY0NC4xMTksInN1YiI6IjY5N2JiM2Q0NjQ0YjA2ZThlZjdmNzhjNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3YcEzWf6bSbUOkzyHFAQ43ey_NFVyk3Wg8miFDSi8-w`,
     'Content-Type': 'application/json;charset=utf-8'
   }
 });
 
-/**
- * FILTRO DE CALIDAD GLOBAL
- * Esta función limpia los resultados de la API antes de que lleguen a tus componentes.
- * Elimina películas sin póster, sin fondo o con descripciones demasiado cortas.
- */
+
 const filterQualityMovies = (data) => {
   if (data && data.results) {
     return {
       ...data,
       results: data.results.filter(movie => 
-        movie.poster_path !== null &&        // Debe tener imagen de póster
-        movie.backdrop_path !== null &&      // Debe tener imagen de fondo
-        movie.overview && movie.overview.length > 15 && // Debe tener una sinopsis real
-        movie.vote_count > 0                 // Evita películas que nadie ha visto o registros basura
+        movie.poster_path !== null &&        
+        movie.backdrop_path !== null &&      
+        movie.overview && movie.overview.length > 15 && 
+        movie.vote_count > 0                
       )
     };
   }
@@ -36,11 +31,11 @@ export const tmdb = {
     return { ...response, data: filterQualityMovies(response.data) };
   },
 
-  // Obtener detalles (aquí no filtramos porque es una sola película específica)
+  // Obtener detalles 
   getDetails: (id) => 
     api.get(`/movie/${id}?append_to_response=videos,credits&language=es-ES`),
 
-  // Buscador (con filtro de calidad para evitar resultados como "HA!")
+  // Buscador 
   search: async (query, page = 1) => {
     const response = await api.get(`/search/movie?query=${query}&language=es-ES&page=${page}&include_adult=false`);
     return { ...response, data: filterQualityMovies(response.data) };
@@ -50,7 +45,7 @@ export const tmdb = {
   getGenres: () => 
     api.get('/genre/movie/list?language=es-ES'),
 
-  // Filtro por género (con filtro de calidad)
+  // Filtro por género 
   getMoviesByGenre: async (genreId, page = 1) => {
     const response = await api.get(`/discover/movie?with_genres=${genreId}&language=es-ES&sort_by=popularity.desc&page=${page}`);
     return { ...response, data: filterQualityMovies(response.data) };
@@ -66,7 +61,6 @@ export const tmdb = {
       favorite: isFavorite
     }),
 
-  // Obtener la lista de favoritos (Aquí no filtramos para no perder lo que el usuario guardó)
   getFavorites: (page = 1) => 
     api.get(`/account/account_id/favorite/movies?language=es-ES&page=${page}&sort_by=created_at.desc`)
 };
