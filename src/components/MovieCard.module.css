@@ -32,3 +32,40 @@
   font-size: 0.8rem;
   font-weight: bold;
 }
+/* Contenedor principal de la grilla */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Ajustes para la Card individual */
+.movie-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* RESPONSIVE ESPECÍFICO */
+@media (max-width: 768px) {
+  .movies-grid {
+    gap: 15px;
+    padding: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+  }
+  
+  .movie-card h3 {
+    font-size: 0.9rem; 
+  }
+}
