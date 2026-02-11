@@ -1,0 +1,128 @@
+/* RESET */
+.nav-fixed-top, 
+.nav-fixed-top * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.nav-fixed-top {
+  background-color: #0b0b0b;
+  width: 100%;
+
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #333;
+  position: sticky; 
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-flex-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 5%;
+  max-width: 100vw; 
+}
+
+/* LOGO */
+.nav-logo-text {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  letter-spacing: -2px;
+}
+
+.text-red-dest {
+  color: #ff0000;
+}
+
+
+.nav-search-capsule {
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 450px; 
+}
+
+.nav-search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  width: 100%;
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+/* FAVORITOS */
+.nav-fav-pill {
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  border: 2px solid #ffffff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  white-space: nowrap; 
+}
+
+/* RESPONSIVE MEJORADO */
+@media (max-width: 768px) {
+  .nav-fixed-top {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .nav-flex-wrapper {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 15px;
+  }
+
+  .nav-logo-text {
+    font-size: 1.8rem;
+    order: 1;
+  }
+
+  .nav-fav-pill {
+    order: 2;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  .nav-search-capsule {
+    order: 3;
+    width: 100%;
+    max-width: 100%; 
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo-text {
+    font-size: 1.4rem;
+  }
+  
+  .nav-fav-pill span:last-child {
+    display: none;
+  }
+  
+  .nav-fav-pill {
+    padding: 10px; 
+  }
+}

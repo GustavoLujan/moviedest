@@ -1,0 +1,21 @@
+.home-main-bg {
+  background-color: #0b0b0b;
+  min-height: 100vh;
+  color: white;
+}
+
+.title-underline {
+  width: 60px;
+  height: 4px;
+  background-color: #e50914; 
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+/* Ajuste de Bootstrap para las 2 columnas en móviles */
+@media (max-width: 576px) {
+  .row-cols-2 > * {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
